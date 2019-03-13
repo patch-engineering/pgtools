@@ -58,7 +58,7 @@ function createOrDropDatabase(action) {
       client.connect();
 
       var escapedDbName = dbName.replace(/\"/g, '""');
-      var sql = action + ' DATABASE "' + escapedDbName + '"';
+      var sql = action + ' DATABASE ' + escapedDbName;
       client.query(sql, function (pgErr, res) {
         var err;
         if (pgErr) {
